@@ -65,7 +65,10 @@ Deep Neural Network outperformed all other classifiers.
 
 Balancing classes reduced accuracy but also reduced overfitting and increased recall.
 
-![Video](img/video.mp4)
+
+![](img/video.png)
+
+Watch the video, click ![Video](img/video.mp4)
 
 
 
