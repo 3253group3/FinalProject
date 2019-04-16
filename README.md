@@ -34,8 +34,13 @@ Using Pipeline and GridSearchCV with five folds we built five models:
 * Gradient Boosting (GBC)
 * Deep Neural Network (DNN)
 
+### Imbalanced data
+
+The data sets are imbalanced, with 88% no and 12% yes. Balanced data set is created for training and comparing to the imbalanced data set.  
 
 ### Comparison of models and Results:
+
+#### Results baseline (unbalanced) classes
 
 | Classifier | Best Parameters | | Precision | Recall | Accuracy |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -45,8 +50,21 @@ Using Pipeline and GridSearchCV with five folds we built five models:
 | Gradient Boosting Classifier   | learning rate: 0.1, pca components: 39, estimators: 200 |  <ul><li>0</li><li>1</li></ul> |  <ul><li>92%</li><li>55%</li></ul> |  <ul><li>96%</li><li>36%</li></ul>  |89.54%  |
 | DNN  | 1 input layer, 2 hidden layers and 1 output layer |  <ul><li>0</li><li>1</li></ul> |  <ul><li>92%</li><li>50%</li></ul> |  <ul><li>96%</li><li>34%</li></ul>  |88.73%  |
 
+#### Results balanced classes
+
+| Classifier | Best Parameters | | Precision | Recall | Accuracy |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| KNN  | neighbors: 5, pca components: 28 |  <ul><li>0</li><li>1</li></ul> |  <ul><li>75%</li><li>80%</li></ul> |  <ul><li>80%</li><li>75%</li></ul>  |77.60%  |
+| SVM  | pca components: 30, C: 1, gamma: 1e-07, kernel: linear |  <ul><li>0</li><li>1</li></ul> |  <ul><li>81%</li><li>83%</li></ul> |  <ul><li>82%</li><li>81%</li></ul>  |81.82%  |
+| Random Forest Classification  | pca components: 34, estimators: 200 |  <ul><li>0</li><li>1</li></ul> |  <ul><li>83%</li><li>83%</li></ul> |  <ul><li>82%</li><li>84%</li></ul>  |82.99%  |
+| Gradient Boosting Classifier   | learning rate: 0.1, pca components: 39, estimators: 200 |  <ul><li>0</li><li>1</li></ul> |  <ul><li>83%</li><li>83%</li></ul> |  <ul><li>83%</li><li>83%</li></ul>  |82.96%  |
+| DNN  | 1 input layer, 2 hidden layers and 1 output layer |  <ul><li>0</li><li>1</li></ul> |  <ul><li>88%</li><li>83%</li></ul> |  <ul><li>81%</li><li>90%</li></ul>  |85.15%  |
 
 ### Conclusion:
-SVM produced better results in terms of both Precision/Recall (91/98%) and Accuracy (89.83%) predicting if the customer would buy the term deposit or not. 
+Deep Neural Network outperformed all other classifiers.
+
+Balancing classes reduced accuracy but also reduced overfitting and increased recall.
+
+
 
 
